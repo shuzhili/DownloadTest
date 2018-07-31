@@ -22,6 +22,7 @@ public class VideoDownloadManager {
     private ConcurrentHashMap map = new ConcurrentHashMap();
     private DownloadableViewPlug downloadableViewPlug;
     private DownloadNotifyCationHandler downloadNotifyCationHandler;
+    private DownloadNotificationClickHandler downloadNotificationClickHandler;
     private DownVideoObserver observer;
     private Handler mHandler = new Handler() {
         @Override
@@ -40,6 +41,7 @@ public class VideoDownloadManager {
         mContext = context;
         this.downloadableViewPlug = downloadableViewPlug;
         this.downloadNotifyCationHandler = new DownloadNotifyCationHandler();
+        this.downloadNotificationClickHandler = new DownloadNotificationClickHandler();
         this.observer = new DownVideoObserver(context, mHandler, downloadNotifyCationHandler);
         init();
     }
@@ -48,6 +50,10 @@ public class VideoDownloadManager {
         if (videoDownloadManager == null) {
             videoDownloadManager = new VideoDownloadManager(context, downloadableViewPlug);
         }
+        return videoDownloadManager;
+    }
+
+    public static VideoDownloadManager getManager() {
         return videoDownloadManager;
     }
 
@@ -174,5 +180,9 @@ public class VideoDownloadManager {
                 }
             }
         }
+    }
+
+    public DownloadNotificationClickHandler getNotificationClickHandler() {
+        return downloadNotificationClickHandler;
     }
 }
