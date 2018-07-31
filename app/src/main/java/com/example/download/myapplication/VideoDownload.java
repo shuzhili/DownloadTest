@@ -65,4 +65,7 @@ public class VideoDownload extends VideoDownloadObserver {
     public static VideoDownload getInstance(Context context, VideoDownloadObserver VideoDownloadObserver, DownloadableViewPlug plug) {
         return new VideoDownload(context, VideoDownloadObserver, plug);
     }
+
+    public void pending() {
+    }
 }

@@ -75,11 +75,13 @@ public class DownloadVideoPlug implements DownloadableViewPlug {
 
     @Override
     public List<HLSOffline> getDownloadingList() {
-        return null;
+        List<HLSOffline> hlsOfflines = hlsOfflineDao.queryBuilder().where(HLSOfflineDao.Properties.Status.eq(1)).list();
+        return hlsOfflines;
     }
 
     @Override
     public List<HLSOffline> getPendingList() {
-        return null;
+        List<HLSOffline> hlsOfflines = hlsOfflineDao.queryBuilder().where(HLSOfflineDao.Properties.Status.eq(6)).list();
+        return hlsOfflines;
     }
 }

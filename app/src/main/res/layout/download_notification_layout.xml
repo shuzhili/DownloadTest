@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff">
+
+    <ImageView
+        android:id="@+id/dn_image"
+        android:layout_width="114dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:background="#F4F4F4"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/dn_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/dn_image"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@id/dn_image"
+        android:maxLines="1"
+        android:text="标题标题标题"
+        android:textColor="#FF000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/dn_progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dn_progress_bar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/dn_image"
+        android:text="45%"
+        android:textColor="#FFA0A0A0"
+        android:textSize="12sp" />
+
+    <ProgressBar
+        android:id="@+id/dn_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/dn_image"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/dn_image"
+        android:maxHeight="3dp"
+        android:minHeight="3dp"
+        android:progressDrawable="@drawable/notification_progress_bar" />
+
+    <TextView
+        android:id="@+id/dn_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/dn_image"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@+id/dn_image"
+        android:maxLines="1"
+        android:text="下载已完成"
+        android:textColor="#FFA0A0A0"
+        android:textSize="12sp" />
+
+</RelativeLayout>
